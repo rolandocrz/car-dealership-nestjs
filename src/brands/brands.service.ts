@@ -53,8 +53,12 @@ export class BrandsService {
 
   remove(id: string) {
     const brand = this.findOne(id);
-    this.brands = this.brands.filter(brand => brand.id !== id);
+    this.brands = this.brands.filter((brand) => brand.id !== id);
 
     return brand;
+  }
+
+  fillBrandsWhithSeedData(brands: Brand[]) {
+    this.brands = brands;
   }
 }
